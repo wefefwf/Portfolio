@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio</title>
+<link th:href="@{/bootstrap/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{/css/main.css}" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<script th:src="@{js/jquery-3.7.1.min.js}"></script>
+</head>
+<body><div class="container-fluid mt-0 pt-0">
+  <div class="row justify-content-center">
+    <div class="col-10"> 
+    <!-- 전체 내용의 공통 너비 -->     
+      <!-- 맨위에 이미지 영역 -->
+      <div class="image-wrap">
+	    <img th:src="@{/maincom.png}" class="mainImage2">
+	    <img th:src="@{/main.jfif}" class="mainImage">
+        <div class="image-header">
+          <h1 class="display-5 fw-bold">Portfolio</h1>
+          <p>Web · Planning · UX</p>
+        </div>
+        <div class="image-text">Development portfolio</div>
+        <div class="image-text2"><i class="bi bi-github"></i></div>
+      </div>
+
+      <!-- 미니프로젝트 설명글 -->
+	    <div class="text-center mt-6">
+  			<i class="bi bi-chevron-double-down" style="font-size:2rem; color:#555;"></i>
+		</div>
+       <div id="projects" class="minicon row">
+		  <div class="col">
+		    <h1 class="minicontent display-5 fw-bold">Projects</h1>
+		    <p class="minicontent">Explore my portfolio — click on any project to visit its GitHub repository.</p>
+		  </div>
+		</div>
+      <!-- 페이지 시작 부분 -->
+      <div class="row justify-content-center g-4">
+  <div class="col-md-3">
+    <div class="card">
+      <img th:src ="@{/File.jfif}" class="card-img-top" alt="프로젝트1" style="object-fit: cover; height: 200px;">
+      <div class="card-body">
+        <h5 class="card-title">프로젝트 1</h5>
+        <p class="card-text">Web · Planning · UX</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <img th:src ="@{/File.jfif}" class="card-img-top" alt="프로젝트2" style="object-fit: cover; height: 200px;">
+      <div class="card-body">
+        <h5 class="card-title">프로젝트 2</h5>
+        <p class="card-text">Web · Java · Spring</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <img th:src ="@{/File.jfif}" class="card-img-top" alt="프로젝트3" style="object-fit: cover; height: 200px;">
+      <div class="card-body">
+        <h5 class="card-title">프로젝트 3</h5>
+        <p class="card-text">Portfolio · UX/UI</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <img th:src ="@{/File.jfif}" class="card-img-top" alt="프로젝트3" style="object-fit: cover; height: 200px;">
+      <div class="card-body">
+        <h5 class="card-title">프로젝트 4</h5>
+        <p class="card-text">Portfolio · UX/UI</p>
+      </div>
+    </div>
+  </div>
+</div>
+      <!-- 기능 설명 -->
+      <div class="row mt-3">
+        <div class="col">
+          다룰줄 아는 기능 설명 뭐 어쩌구
+        </div>
+      </div>
+
+      <!-- Git 연결 -->
+      <div class="row mt-3">
+        <div class="col">
+          좀더자세한걸 보고싶다면 여기로 -git연결
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="row mt-3">
+        <div class="col">
+          footer
+        </div>
+      </div>
+
+    </div> <!-- col-10 끝 -->
+  </div> <!-- row justify-content-center 끝 -->
+</div>
+<script th:src="@{bootstrap/bootstrap.bundle.min.js}"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // 클릭할 이미지들 선택
+    const images = document.querySelectorAll('.mainImage, .mainImage2');
+    
+    images.forEach(img => {
+        img.addEventListener('click', (e) => {
+            // 프로젝트 섹션 위치 찾기
+            const target = document.getElementById('projects');
+            if (target) {
+                // 상단 여백을 고려해 정교하게 이동
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+                window.scrollTo({
+                    top: targetPosition - 20, // 20px 정도 여유를 두고 이동
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>
