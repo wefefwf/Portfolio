@@ -4,17 +4,64 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Portfolio</title>
-<link th:href="@{bootstrap/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{/bootstrap/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{/css/main.css}" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 <script th:src="@{js/jquery-3.7.1.min.js}"></script>
 </head>
-<body>
-<div class ="container">
-	<div class ="row">
-		<div class ="col">
-포트폴리오 기본 설정 완료
-		</div>
-	</div>
+<body><div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-10"> <!-- 전체 내용의 공통 너비 -->
+      
+      <!-- 이미지 영역 -->
+      <div class="image-wrap">
+        <img th:src="@{/maincom.png}" class="mainImage2">
+        <img th:src="@{/main.jfif}" class="mainImage">
+        <div class="image-header">
+          <h1 class="display-5 fw-bold">Portfolio</h1>
+          <p>Web · Planning · UX</p>
+        </div>
+        <div class="image-text">Development portfolio</div>
+        <div class="image-text2"><i class="bi bi-github"></i></div>
+      </div>
+
+      <!-- 페이지 시작 부분 -->
+      <div class="row mt-4">
+        <div class="col">
+          페이지 시작부분
+        </div>
+      </div>
+
+      <!-- 미니프로젝트 사진 -->
+      <div class="row mt-3">
+        <div class="col">
+          미니프로젝트 사진 띄우기
+        </div>
+      </div>
+
+      <!-- 기능 설명 -->
+      <div class="row mt-3">
+        <div class="col">
+          다룰줄 아는 기능 설명 뭐 어쩌구
+        </div>
+      </div>
+
+      <!-- Git 연결 -->
+      <div class="row mt-3">
+        <div class="col">
+          좀더자세한걸 보고싶다면 여기로 -git연결
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="row mt-3">
+        <div class="col">
+          footer
+        </div>
+      </div>
+
+    </div> <!-- col-10 끝 -->
+  </div> <!-- row justify-content-center 끝 -->
 </div>
 <script th:src="@{bootstrap/bootstrap.bundle.min.js}"></script>
 </body>
